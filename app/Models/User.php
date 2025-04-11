@@ -25,27 +25,33 @@ class User extends Authenticatable
     ];
 
     // Типы пользователей
-    const TYPE_STUDENT = 0;
+
     const TYPE_TEACHER = 1;
     const TYPE_ADMIN = 2;
 
-    public function getFullNameAttribute()
-    {
-        return trim($this->LASTNAME . ' ' . $this->FIRSTNAME . ' ' . $this->MIDDLENAME);
-    }
+
 
     public function isAdmin()
     {
         return $this->type == self::TYPE_ADMIN;
     }
 
-    public function isTeacher()
+
+
+
+
+    public function teacher()
     {
-        return $this->type == self::TYPE_TEACHER;
+        return $this->hasOne(Teacher::class, 'user_id', 'ID');
     }
 
-    public function isStudent()
+    public function grades()
     {
-        return $this->type == self::TYPE_STUDENT;
+        return $this->hasMany(Grade::class, 'student_id', 'ID');
+    }
+
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class, 'student_id', 'ID');
     }
 }

@@ -11,7 +11,7 @@ class CheckUserType
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param
      */
     public function handle($request, Closure $next, ...$types)
     {

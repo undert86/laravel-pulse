@@ -20,7 +20,13 @@
 
         <nav class="nav-links">
             <a href="" class="nav-link">Главная</a>
-            <a href="{{route('grades')}}" class="nav-link">Оценки</a>
+            <a href="" class="nav-link">Оценки</a>
+            <a href="{{ route('messenger') }}" class="nav-link" id="messenger-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Мессенджер
+            </a>
             <div class="dropdown">
                 <a href="#" class="nav-link">Расписание</a>
                 <div class="dropdown-menu">
@@ -197,7 +203,7 @@
         flex-direction: column;
     }
     .logout-btn {
-        background-color: var(--danger-color);
+
         color: white;
         padding: 5px 10px;
         border-radius: var(--border-radius);
@@ -206,7 +212,31 @@
         transition: all 0.3s ease;
         margin-left: 2750%;
     }
+    .chat-item:hover {
+        background-color: rgba(67, 97, 238, 0.1);
+    }
 
+    #chatMessages {
+        scrollbar-width: thin;
+        scrollbar-color: #4361ee #f1f1f1;
+    }
+
+    #chatMessages::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #chatMessages::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    #chatMessages::-webkit-scrollbar-thumb {
+        background-color: #4361ee;
+        border-radius: 6px;
+    }
+
+    .avatar {
+        flex-shrink: 0;
+    }
     .logout-btn:hover {
         background-color: #d3166b;
         transform: translateY(-2px);
@@ -660,4 +690,6 @@
 <!-- Подключаем Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<!-- Messenger Modal -->
+
 </html>

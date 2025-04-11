@@ -10,10 +10,16 @@ use App\Models\Teacher;
 
 class grade extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
-        'student_id', 'subject_id', 'teacher_id',
-        'grade', 'comment', 'date'
+        'student_id',
+        'teacher_id',
+        'subject_id',
+        'grade',
+        'comment',
+        'date'
     ];
+    protected $primaryKey = 'grade_id';
 
     public function student()
     {

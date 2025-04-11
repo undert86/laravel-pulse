@@ -18,6 +18,8 @@ class Attendance extends Model
         'date' => 'date'
     ];
 
+    protected $primaryKey = 'attendance_id';
+
     public function student()
     {
         return $this->belongsTo(User::class, 'student_id', 'ID');

@@ -6,15 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class teacher extends Model
 {
-    protected $table = 'teachers';
     protected $primaryKey = 'teacher_id';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        // другие поля
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'ID');
+    }
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'teacher_id');
+    }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'teacher_subjects', 'teacher_id', 'subject_id');
+    }
+
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class, 'teacher_id');
+    }
 
     public function getFullNameAttribute()
     {
