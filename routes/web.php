@@ -80,3 +80,5 @@ Route::middleware(['auth', 'check.user.type:1'])->prefix('teacher')->name('teach
 Route::get('/403', function() {
     abort(403);
 })->name('403');
+
+

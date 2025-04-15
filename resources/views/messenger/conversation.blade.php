@@ -49,34 +49,12 @@
             display: flex;
             flex-direction: column;
             background: #f5f7fb;
-            width: 100%;
+            width: 10%;
         }
 
-        .conversation-header {
-            padding: 15px 20px;
-            border-bottom: 1px solid var(--light-gray);
-            display: flex;
-            align-items: center;
-            background: var(--white);
-            position: sticky;
-            top: -100%;
-            
-        }
 
-        .user-info {
-            flex: 1;
-            min-width: 0;
-        }
 
-        .user-info h4 {
-            margin: 0;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--dark);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+
 
         .user-type {
             margin: 3px 0 0;
@@ -119,17 +97,18 @@
         }
 
         .messages-container {
-            flex: 1;
+            flex: 2;
             padding: 20px;
             overflow-y: auto;
             background: #f5f7fb;
             display: flex;
             flex-direction: column;
+            margin-top: -1%;
         }
 
         .message {
             display: flex;
-            margin-bottom: 12px;
+            margin-bottom: 30px;
             max-width: 75%;
             animation: fadeIn 0.3s ease;
         }
@@ -319,20 +298,10 @@
     <div class="messenger-content">
         <div class="conversation-header">
             <div class="user-info">
-                <div class="user-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
+
                 <div class="user-info-text">
-                    <h3>{{ $receiver->LASTNAME }} {{ $receiver->FIRSTNAME }}</h3>
-                    <p class="user-status">
-                        @if($receiver->type == 0)
-                            Студент
-                        @elseif($receiver->type == 1)
-                            Преподаватель
-                        @else
-                            Администратор
-                        @endif
-                    </p>
+
+
                 </div>
             </div>
         </div>
